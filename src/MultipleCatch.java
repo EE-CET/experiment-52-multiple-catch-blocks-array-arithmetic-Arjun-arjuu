@@ -1,31 +1,36 @@
 import java.util.Scanner;
 
 public class MultipleCatch {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+	public static void main(String[] args){
 
-        try {
-            int n = scanner.nextInt();
-            int[] arr = new int[n];
-            for (int i = 0; i < n; i++) {
-                arr[i] = scanner.nextInt();
-            }
-            int index = scanner.nextInt();
-            int divisor = scanner.nextInt();
-            int result = arr[index] / divisor;
-            System.out.println(result);
+		Scanner sc= new Scanner(System.in);
 
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Invalid Index");
-            
-        } catch (ArithmeticException e) {
-            System.out.println("Divide by zero error");
-            
-        } finally {
-            scanner.close();
-        }
-    }
+		int n= sc.nextInt();
+		int[] arr= new int[n];
+
+		for(int i=0;i<n;i++)arr[i]= sc.nextInt();
+
+		int idx= sc.nextInt();
+		int a= sc.nextInt();
+
+		try{
+
+			int r= arr[idx]/a;
+			System.out.println(r);
+
+		}
+		catch(ArrayIndexOutOfBoundsException ae){
+
+			System.out.println("Invalid Index");
+
+		}
+		catch(ArithmeticException e){
+
+			System.out.println("Divide by zero error");
+
+		}
+		sc.close();
+
+	}    
 }
 
-    
-}
